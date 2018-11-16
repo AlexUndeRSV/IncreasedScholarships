@@ -1,10 +1,10 @@
-package com.lynx.increasedscholarshipsapp;
+package com.lynx.increasedscholarshipsapp.presentation.container;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.arellomobile.mvp.MvpAppCompatActivity;
 import com.arellomobile.mvp.presenter.InjectPresenter;
+import com.lynx.increasedscholarshipsapp.R;
 
 public class MainActivity extends MvpAppCompatActivity implements MainView{
 

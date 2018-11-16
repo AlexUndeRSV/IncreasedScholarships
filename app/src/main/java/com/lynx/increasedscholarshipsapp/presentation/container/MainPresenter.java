@@ -1,8 +1,7 @@
-package com.lynx.increasedscholarshipsapp;
+package com.lynx.increasedscholarshipsapp.presentation.container;
 
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
-import com.arellomobile.mvp.presenter.InjectPresenter;
 
 @InjectViewState
 public class MainPresenter extends MvpPresenter<MainView>{

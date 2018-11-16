@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "806358402708",
+    "firebase_url": "https://increased-scholarships.firebaseio.com",
+    "project_id": "increased-scholarships",
+    "storage_bucket": "increased-scholarships.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:806358402708:android:a3b9313f6bb760c8",
+        "android_client_info": {
+          "package_name": "com.lynx.increasedscholarshipsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "806358402708-9v75n3a458lobpqhq0cf36dqnmum7stj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdIvesxNQqHC6meWwfGWeXMai9yB0zIXI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
