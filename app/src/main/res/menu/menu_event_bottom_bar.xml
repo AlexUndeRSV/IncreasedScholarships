@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:id="@+id/q"
+    android:title="men"
+    app:showAsAction="always"
+    android:icon="@drawable/baseline_color_lens_black_18dp"
+    />
+    <item
+        android:id="@+id/qw"
+        android:title="men"
+        app:showAsAction="always"
+        android:icon="@drawable/baseline_flash_on_black_18dp"
+        />
+    <item
+        android:id="@+id/qq"
+        android:title="men"
+        app:showAsAction="always"
+        android:icon="@drawable/baseline_crop_black_18dp"
+        />
+    <item
+        android:id="@+id/qe"
+        android:title="men"
+        app:showAsAction="always"
+        android:icon="@drawable/baseline_collections_black_18dp"
+        />
+</menu>
