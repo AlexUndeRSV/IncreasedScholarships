@@ -7,6 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.lynx.increasedscholarshipsapp.domain.dataclass.User;
+import com.lynx.increasedscholarshipsapp.other.event.HideLoaderEvent;
 import com.lynx.increasedscholarshipsapp.other.event.SetTitleEvent;
 
 import com.arellomobile.mvp.MvpAppCompatFragment;
@@ -14,6 +18,7 @@ import com.lynx.increasedscholarshipsapp.R;
 
 
 import com.arellomobile.mvp.presenter.InjectPresenter;
+import com.lynx.increasedscholarshipsapp.other.event.ShowLoaderEvent;
 
 import org.greenrobot.eventbus.EventBus;
 
@@ -21,6 +26,8 @@ public class RegistrationFragment extends MvpAppCompatFragment implements Regest
     public static final String TAG = "RegistrationFragment";
     @InjectPresenter
     RegestrationPresenter presenter;
+
+    private DatabaseReference dbReference;
 
     private TextInputLayout txtInputFirstName, txtInputLastName, txtInputEmail, txtInputPassword;
 
@@ -44,6 +51,8 @@ public class RegistrationFragment extends MvpAppCompatFragment implements Regest
 
         EventBus.getDefault().post(new SetTitleEvent("Регистрация"));
 
+        dbReference = FirebaseDatabase.getInstance().getReference().child("users");
+
         txtInputFirstName = view.findViewById(R.id.edtRegFirstName);
         txtInputLastName = view.findViewById(R.id.edtRegLastName);
         txtInputEmail = view.findViewById(R.id.edtRegEmail);
@@ -51,7 +60,38 @@ public class RegistrationFragment extends MvpAppCompatFragment implements Regest
 
         btnReg = view.findViewById(R.id.btnRegistration);
         btnReg.setOnClickListener((v)->{
-
+            onRegistration(txtInputFirstName.getEditText().getText().toString().trim(),
+                    txtInputLastName.getEditText().getText().toString().trim(),
+                    txtInputEmail.getEditText().getText().toString().trim(),
+                    txtInputPassword.getEditText().getText().toString().trim());
         });
+    }
+
+    private void onRegistration(String fName, String lName, String email, String pass) {
+
+        //TODO проверять на корректность все поля
+
+        EventBus.getDefault().post(new ShowLoaderEvent());
+
+        if(fName.isEmpty()){
+            return;
+        }else if(lName.isEmpty()){
+            return;
+        }else if(email.isEmpty()){
+            return;
+        }else if(pass.isEmpty()){
+            return;
+        }
+
+        User user = new User();
+
+        user.setfName(fName);
+        user.setlName(lName);
+        user.setEmail(email);
+        user.setPassword(pass);
+
+        dbReference.setValue(user);
+
+        EventBus.getDefault().post(new HideLoaderEvent());
     }
 }

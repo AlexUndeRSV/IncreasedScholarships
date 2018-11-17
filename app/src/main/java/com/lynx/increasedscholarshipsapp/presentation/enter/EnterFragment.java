@@ -1,6 +1,7 @@
 package com.lynx.increasedscholarshipsapp.presentation.enter;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
@@ -18,6 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.lynx.increasedscholarshipsapp.R;
+import com.lynx.increasedscholarshipsapp.event.EventActivity;
 import com.lynx.increasedscholarshipsapp.other.event.HideLoaderEvent;
 import com.lynx.increasedscholarshipsapp.other.event.SetTitleEvent;
 import com.lynx.increasedscholarshipsapp.other.event.ShowLoaderEvent;
@@ -93,11 +95,7 @@ public class EnterFragment extends MvpAppCompatFragment implements EnterView {
                 for(DataSnapshot data : dataSnapshot.getChildren()){
                     if(data.child("email").getValue().equals(email)){
                         if(data.child("pass").getValue().equals(password)){
-                            Snackbar.make(btnEnter, "Все хорошо)", Snackbar.LENGTH_INDEFINITE)
-                                    .setAction("OK", v -> {
-
-                                    }).show();
-                            EventBus.getDefault().post(new HideLoaderEvent());
+                            startActivity(new Intent(getActivity(), EventActivity.class));
                         }
                     }
                 }
