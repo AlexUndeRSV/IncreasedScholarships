@@ -12,24 +12,25 @@ class EventHolder(var view: View) : RecyclerView.ViewHolder(view) {
     private lateinit var mTxtName: TextView
     private lateinit var mTxtDate: TextView
     private lateinit var mTxtDiscription: TextView
-    private lateinit var mTxtCountPepole: TextView
+    private lateinit var mTxtCountPeople: TextView
     private lateinit var mBtnGo: TextView
 
     fun onBind(eventModel: EventModel) {
         mTxtName = view.findViewById(R.id.name)
         mTxtDate = view.findViewById(R.id.date)
         mTxtDiscription = view.findViewById(R.id.discrip)
-        mTxtCountPepole = view.findViewById(R.id.people_count)
+        mTxtCountPeople = view.findViewById(R.id.people_count)
         mBtnGo = view.findViewById(R.id.btn_go)
 
         mTxtName.text = eventModel.name
         mTxtDiscription.text = eventModel.discription
         mTxtDate.text = eventModel.date
-        mTxtCountPepole.text = "Количестово участников 0/${eventModel.countPeople}"
+        mTxtCountPeople.text = "Количестово участников 0/${eventModel.countPeople}"
         check()
         mBtnGo.setOnClickListener {
             isTabBtnGo = !isTabBtnGo
             check()
+
         }
 
     }
