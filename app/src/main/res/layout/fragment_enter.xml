@@ -1,0 +1,88 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.enter.EnterFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_margin="32dp"
+            android:id="@+id/imgEnterPhoto"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/person"
+            android:layout_width="200dp"
+            android:layout_height="200dp" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/edtEnterEmail"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/imgEnterPhoto"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:layout_height="wrap_content" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/edtEnterPassword"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/edtEnterEmail"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            app:passwordToggleEnabled="true"
+            android:layout_height="wrap_content">
+
+            <android.support.design.widget.TextInputEditText
+                android:layout_width="match_parent"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:layout_height="wrap_content" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_below="@id/edtEnterPassword"
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnGoToRegistration"
+                android:text="регистрация"
+                style="@style/ButtonStyle"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnEnter"
+                android:text="Вход"
+                style="@style/ButtonStyle"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
