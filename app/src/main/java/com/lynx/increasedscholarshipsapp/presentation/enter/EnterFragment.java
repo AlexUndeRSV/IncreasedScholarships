@@ -93,8 +93,8 @@ public class EnterFragment extends MvpAppCompatFragment implements EnterView {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for(DataSnapshot data : dataSnapshot.getChildren()){
-                    if(data.child("email").getValue().equals(email)){
-                        if(data.child("pass").getValue().equals(password)){
+                    if(data.child("email").getValue() != null && data.child("email").getValue().equals(email)){
+                        if(data.child("pass").getValue() != null && data.child("pass").getValue().equals(password)){
                             startActivity(new Intent(getActivity(), EventActivity.class));
                         }
                     }
