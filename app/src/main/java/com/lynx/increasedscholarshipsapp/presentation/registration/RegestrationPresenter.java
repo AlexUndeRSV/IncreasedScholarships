@@ -1,6 +1,5 @@
-package com.lynx.increasedscholarshipsapp.presentation.regestration;
+package com.lynx.increasedscholarshipsapp.presentation.registration;
 
-import com.lynx.increasedscholarshipsapp.presentation.regestration.RegestrationView;
 import com.arellomobile.mvp.InjectViewState;
 import com.arellomobile.mvp.MvpPresenter;
 

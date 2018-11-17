@@ -1,4 +1,4 @@
-package com.lynx.increasedscholarshipsapp.presentation.regestration;
+package com.lynx.increasedscholarshipsapp.presentation.registration;
 
 import com.arellomobile.mvp.MvpView;
 
